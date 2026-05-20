@@ -6,11 +6,6 @@ services:
     buildCommand: npm install
     startCommand: node server.js
     plan: free
-    envVars:
-      - key: MONGO_URI
-        sync: false
-      - key: JWT_SECRET
-        sync: false
 
   - type: web
     name: our-place-client
