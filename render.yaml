@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: our-place-server
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+
+  - type: static
+    name: our-place-client
+    rootDir: client
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
